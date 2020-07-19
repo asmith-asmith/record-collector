@@ -3,9 +3,9 @@ var Schema = mongoose.Schema;
 
 var recordSchema = new Schema({
   name: {type: String, required: true},
-  band: {type: String, required: true},
-  year: {type: String},
-  recordType: String
+  artist: {type: String, required: true},
+  year: Number,
+  genre: String
 },{
   timestamps: true
 });
