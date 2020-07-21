@@ -48,6 +48,15 @@ class EditRecordPage extends Component {
               onChange={this.handleChange}
             />
           </div>
+          <div className="form-group">
+            <label>Genre</label>
+            <input
+              className="form-control"
+              name="genre"
+              value={this.state.formData.genre}
+              onChange={this.handleChange}
+            />
+          </div>
           <button
             type="submit"
             className="btn btn-xs"

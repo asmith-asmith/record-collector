@@ -4,6 +4,7 @@ import RecordListPage from '../RecordListPage/RecordListPage'
 import AddRecordPage from '../AddRecordPage/AddRecordPage'
 import { Route, Switch, NavLink } from 'react-router-dom';
 import EditRecordPage from '../EditRecordPage/EditRecordPage'
+import {getAllGenres} from '../../utils/music-api.js'
 
 class App extends Component {
   state = {
@@ -11,19 +12,23 @@ class App extends Component {
       {
         _id: 1,
         name: 'Exile on Main Street',
-        artist: 'The Rolling Stones'
+        artist: 'The Rolling Stones',
+        genre: "Rock"
       },
       {
         _id: 2,
         name: 'Kind of Blue',
-        artist: 'Miles Daves'
+        artist: 'Miles Daves',
+        genre: "Jazz"
       },
       {
         _id: 3,
         name: 'Houses of the Holy',
-        artist: 'Led Zeppelin'
+        artist: 'Led Zeppelin',
+        genre: "Rock"
       }
-    ]
+    ],
+    genres: []
   }
   /*--- Handle Methods ---*/
 
@@ -55,6 +60,13 @@ class App extends Component {
   }
 
   /*--- Lifecycle Methods ---*/
+  async componentDidMount(){
+    const genresFromAPI = await getAllGenres();
+    this.setState({
+      genres: genresFromAPI
+    })
+  }
+
   render(){
     return (
       <div className="App">

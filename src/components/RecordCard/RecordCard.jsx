@@ -11,6 +11,7 @@ function RecordCard({record, handleDeleteRecord}){
                 <dl>
                     <dt>Artist: </dt>
                     <dd>{record.artist}</dd>
+                    <dd>{record.genre}</dd>
                 </dl>
             </div>
             <div className="panel-footer">

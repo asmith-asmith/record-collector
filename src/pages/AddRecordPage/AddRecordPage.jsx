@@ -51,6 +51,16 @@ class AddRecordPage extends Component {
                             required
                         />
                     </div>
+                    <div className="form-group">
+                        <label>Genre</label>
+                        <input
+                            className="form-control"
+                            name="genre"
+                            value={this.state.formData.genre}
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </div>
                     <button
                         type="submit"
                         className="btn"
